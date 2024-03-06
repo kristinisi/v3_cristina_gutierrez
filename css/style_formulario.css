@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Wire+One&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  display: grid;
+  justify-items: center;
+}
+
+.portada {
+  width: 100%;
+  height: 110vh;
+  display: grid;
+  grid-template-rows: [uno] 94% [dos] 6% [tres];
+}
+
+.barra {
+  background-color: #1b1557;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.barra__style {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 10px;
+}
+
+.barra__style li {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.barra ul a {
+  text-decoration: none;
+  color: white;
+}
+
+.contenedor {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  background-image: url("../img/marmol2.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.formulario {
+  background-color: black;
+  opacity: 70%;
+  border-radius: 30px;
+  color: white;
+  width: 60vw;
+  height: 85vh;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.zona1 {
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: [uno] 5% [dos] 70% [tres];
+  justify-content: center;
+  column-gap: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.persona__nombre,
+.persona__apellido1,
+.persona__apellido2,
+.persona__fecha,
+.persona__hora,
+.persona__personas,
+.persona__mensaje {
+  display: grid;
+}
+
+.persona__mensaje {
+  height: 80px;
+}
+
+.tarjeta__numero,
+.tarjeta__caducidad,
+.tarjeta__seguridad,
+.tarjeta__titular,
+.tarjeta__importe {
+  display: grid;
+}
+
+.tarjeta__importe img {
+  padding-left: 17vw;
+  padding-bottom: 0;
+  height: 100px;
+}
+
+.formulario__enviar {
+  text-align: center;
+}
+
+.zona2 {
+  display: grid;
+  grid-template-rows: [uno] 30% [dos];
+  justify-content: center;
+}
+
+.zona2 div {
+  text-align: center;
+}
+
+.separador {
+  background-color: #1b1557;
+}
+
+.progress {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  --bs-progress-bar-bg: #757575;
+}
+
+.modal {
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close,
+#confirmarReserva {
+  color: #aaa;
+  float: right;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.closeConfirmacion:hover,
+#confirmarReserva:focus,
+#confirmarReserva:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

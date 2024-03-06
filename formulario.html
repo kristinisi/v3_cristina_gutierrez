@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/style_formulario.css">
+    <!-- Hotjar Tracking Code for MAR -->
+<!-- Hotjar Tracking Code for MAR -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3877702,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <title>Ejercicio formulario</title>
+</head>
+<body>
+
+    <div class="portada">
+        <nav class="barra">
+            <ul class="barra__style">
+                <li><a href="./index.html">Inicio</a></li>
+            </ul>
+        </nav>
+
+        <section class="contenedor">
+            <form class="formulario needs-validation" novalidate>
+        
+                <div class="zona1">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    <div class="formulario__persona">
+                        <h3>Datos de la reserva:</h3>
+                        <div class="persona__nombre">
+                            <label  for="nombre">Nombre </label>
+                            <input id="nombre" type="text" name="nombre" pattern="[A-Za-z]+" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">Debe rellenar el campo con su nombre</div>         
+                        </div>
+                        <div class="persona__apellido1">
+                            <label  for="apellido1">Primer apellido </label>
+                            <input id="apellido1" type="tex" name="apellido1" pattern="[A-Za-z]+" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">Debe rellenar el campo con su primer apellido</div>         
+                        </div>                        
+                        <div class="persona__apellido2">
+                            <label for="apellido2">Segundo apellido </label>
+                            <input id="apellido2" type="tex" name="apellido2" pattern="[A-Za-z]+" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">Debe rellenar el campo con su segundo apellido</div>         
+                        </div>
+                        <div class="persona__fecha">
+                            <label for="fecha">Fecha: </label>
+                            <input id="fecha" type="date" name="fecha" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">Debe seleccionar una día para la reserva</div>         
+                        </div>
+                        <div class="persona__hora">
+                            <label for="hora">Hora: </label>
+                            <input id="hora" type="time" name="hora" min="12:00" max="22:00" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">La hora mínima de reserva es a las 12:00 y la máxima a las 22:00</div> 
+                        </div>
+                        <div class="persona__personas">
+                            <label for="personas">Ingresa un número:</label>
+                            <input id="personas" type="number" name="personas" min="1" max="50" step="1" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">El número de personas a reservar es entre 1 y 50.</div> 
+                        </div>
+                        <div class="persona__mensaje">
+                            <label for="mensaje">Escribe tu mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required>¿Alguna sugerencia?</textarea>
+                        </div>
+                        
+                    </div>
+
+                    <div class="formulario__tarjeta">
+                        <h3>Datos de la tarjeta:</h3>
+                        <div class="tarjeta__numero">
+                            <label for="tarjeta">Número de Tarjeta: </label>
+                            <input id="tarjeta" type="text" pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}" maxlength="19" minlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">El número de tarjeta debe de ser 16 número sin nada entre medias.</div> 
+                        </div>
+                        <div class="tarjeta__caducidad">
+                            <label for="caducidad" class="uno">Caducidad: </label>
+                            <input id="caducidad" type="text" pattern="(0[1-9]|1[0-2])\/(2[2-9]|[3-9][0-9])" maxlength="5" minlength="5" required placeholder="mm/yy">
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">La caducidad debe ser mes/año</div> 
+                        </div>
+                        <div class="tarjeta__seguridad">
+                            <label for="seguridad" class="uno">Código de seguridad/CVV2: </label>
+                            <input type="text" id="seguridad" pattern="[0-9]{3}" maxlength="3" minlength="3" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">El número de seguridad son 3 números</div> 
+                        </div>
+                        <div class="tarjeta__titular">
+                            <label for="titular" class="uno">Titular de la Tarjeta: </label>
+                            <input type="text" id="titular" pattern="[A-Za-z]+(\s[A-Za-z]+)*" required>
+                            <div class="valid-feedback">✓</div>
+                            <div class="invalid-feedback">Debe introducir el titular de la tarjeta</div> 
+                        </div>
+                        <div class="tarjeta__importe">
+                            <label for="importe">Importe: </label>
+                            <input type="text" id="importe" pattern="[0-9]{0,4}[,][0-9]{0,2}" value="20,00" readonly>
+                            <img src="./img/visa.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="zona2">
+                    <div class="formulario_enviar">
+                        <p>Si no se cancela antes de 24 horas deberá abonar al establecimiento los 20,00€ de la reserva.</p>
+                        <p>Si cumple con la reserva no se le efectuará este cobro.</p>
+                        <input id="reservar" type="submit" value="Reservar">
+                    </div>
+                </div>
+            </form>
+
+            <div id="confirmDialog" class="modal">
+                <div class="modal-content">
+                  <p>¿Estás seguro de que deseas reservar?</p>
+                  <button id="confirmarReserva">Sí</button>
+                  <button class="close">Cancelar</button>
+                </div>
+              </div>
+
+              <div id="reservaCompletada" class="modal">
+                <div class="modal-content">
+                  <span class="closeConfirmacion">&times;</span>
+                  <p>Su reserva se ha confirmado</p>
+                </div>
+              </div>
+        </section> 
+        
+        <div class="separador"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous"></script>
+
+   <script src="./js/formulario.js"></script>
+</body>
+</html>
