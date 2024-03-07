@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +26,14 @@
 
     <header class="portada" id="seccionPortada">
         <nav class="barra">
+            
+            <div class="traduccion">
+                <img src="./img/traduccion.png" alt="logo para traducción de lenguaje">
+                <a id="es" class="translate" href="#">ES |</a>
+                <a id="en" class="translate" href="#">EN</a>
+            </div>
             <ul class="barra__style">
-                <li id="init"><a href="#seccionPortada">Inicio</a></li>
+                <li id="init" ><a class="lang" key="m1" href="#seccionPortada">Inicio</a></li>
                 <!-- <li id="cat"><a href="#seccionCategorias">Categorías</a></li> -->
                 <!-- <li><a href="#seccionReserva">Reserva</a></li>
                 <li><a href="#seccionNosotros">Nosotros</a></li> -->
@@ -50,9 +56,9 @@
 
    <footer class="foo">
     <p>© 2024 MAR</p>
-    <p>Todos los derechos reservados.</p> 
-    <a href="#">Política de privacidad</a> | <a href="#">Términos de servicio</a><br><br>
-    <a href="./mapaWeb.html">Mapa web</a>
+    <p class="lang" key="f1">Todos los derechos reservados.</p> 
+    <a href="#" class="lang" key="f2">Política de privacidad</a> | <a href="#" class="lang" key="f3">Términos de servicio</a><br><br>
+    <a href="./mapaWeb.html" class="lang" key="f4">Mapa web</a>
     <br><br>
     <img src="./img/instagram.png">
     <img src="./img/facebook.png">
@@ -62,5 +68,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
             crossorigin="anonymous"></script>
    <script src="./js/test.js" type="module"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="./js/lenguaje.js" charset="utf-8"></script>
 </body>
 </html>

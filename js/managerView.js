@@ -49,19 +49,19 @@ class ManagerView {
       `<div>
         <a class='categories__enlace' href="#Moluscos" data-category="Moluscos">
         <img src="./img/_calamar.png" alt="Categoría Moluscos y Cefalopodos">
-          <h4>Moluscos y Cefalópodos</h4>
+          <h4 class="lang" key="b1">Moluscos y Cefalópodos</h4>
         </a>
       </div>
       <div>
           <a class='categories__enlace' href="#Crustaceos" data-category="Crustaceos">
               <img src="./img/_langosta.png" alt="Categoría Crustaceos">
-              <h4>Crustáceos</h4>
+              <h4 class="lang" key="b2">Crustáceos</h4>
           </a>
       </div>
       <div>
           <a class='categories__enlace' href="#Pescados" data-category="Pescados">
               <img src="./img/_pez.png" alt="Categoría Pescados">
-              <h4>Pescados</h4>
+              <h4 class="lang" key="b3">Pescados</h4>
           </a>
       </div>`
     );
@@ -104,11 +104,12 @@ class ManagerView {
 
       <div class="reserva" id="seccionReserva" itemprop="adress" itemscope itemtype="https://schema.org/PostalAddress">
           <header>
-              <h1>RESERVA</h1>
-              <p>Puedes realizar tu reserva de dos formas:</p>
+              <h1 class='lang' key='r1'>RESERVA</h1>
+              <p class='lang' key='r2'>Puedes realizar tu reserva de dos formas:</p>
           </header>
-          <article class="reserva__telefonica" >Reservar por teléfono: <span itemprop="telephone">926868344</span> </article><br>
-          <article class="reserva__online">Reservar online, a través de nuestro formulario
+          <article class="reserva__telefonica lang" key='r3'>Reservar por teléfono: <span itemprop="telephone">926868344</span> </article><br>
+          <article class="reserva__online" >
+              <p class='lang' key='r4'>Reservar online, a través de nuestro formulario</p>
               <br><br><button><a href="./formulario.html">ONLINE</a></button>
           </article>
       </div>
@@ -117,20 +118,20 @@ class ManagerView {
   
       <div class="nosotros" id="seccionNosotros">
           <header>
-              <h1>NOSOTROS</h1>
-              <h3>¿Quiénes somos?</h3>
+              <h1 class='lang' key='n1'>NOSOTROS</h1>
+              <h3 class='lang' key='n2'>¿Quiénes somos?</h3>
           </header>
           <div class="nosotros__imagen"></div>
-          <article class="nosotros_descripcion">
-              Bienvenidos a Mar, el restaurante fundado con pasión y dedicación por un equipo de amantes del mar. Nosotros, los fundadores, nos enorgullece presentarles una experiencia culinaria única, donde cada plato es una obra maestra de calidad fresca directamente del océano.
+          <article class="nosotros_descripcion lang" key='n3'>
+              <p class='lang' key='t1'>Bienvenidos a Mar, el restaurante fundado con pasión y dedicación por un equipo de amantes del mar. Nosotros, los fundadores, nos enorgullece presentarles una experiencia culinaria única, donde cada plato es una obra maestra de calidad fresca directamente del océano.</p>
   
-              <br><br>Con raíces profundas en la tradición gastronómica marina, hemos creado un espacio donde la frescura y la excelencia se fusionan para ofrecerle lo mejor del mar en cada bocado. Nuestro compromiso con la calidad se refleja en cada detalle, desde la cuidadosa selección de ingredientes hasta la presentación artística de cada plato.
+              <p class='lang' key='t2'>Con raíces profundas en la tradición gastronómica marina, hemos creado un espacio donde la frescura y la excelencia se fusionan para ofrecerle lo mejor del mar en cada bocado. Nuestro compromiso con la calidad se refleja en cada detalle, desde la cuidadosa selección de ingredientes hasta la presentación artística de cada plato.</p>
   
-              <br><br>En Mar, no solo servimos alimentos; ofrecemos una experiencia que celebra la riqueza del mar y la dedicación a la cocina excepcional. Únase a nosotros para explorar el sabor auténtico del océano, donde cada comida es una celebración de la frescura, la pasión y la tradición. ¡Bienvenidos a bordo!        
+              <p class='lang' key='t3'>En Mar, no solo servimos alimentos; ofrecemos una experiencia que celebra la riqueza del mar y la dedicación a la cocina excepcional. Únase a nosotros para explorar el sabor auténtico del océano, donde cada comida es una celebración de la frescura, la pasión y la tradición. ¡Bienvenidos a bordo!</p>
           </article>
          <article class="nosotros__situacion" itemprop="adress" itemscope itemtype="https://schema.org/PostalAddress">
-              <h3>¿Dónde encontrarnos?</h3>
-              <p itemprop="streetAddress">Calle Lope de Vega, 33</p>
+              <h3 class='lang' key='n4'>¿Dónde encontrarnos?</h3>
+              <p class='lang' key='n5' itemprop="streetAddress">Calle Lope de Vega, 33</p>
               <p itemprop="addressLocality">Madrid</p>
               <p itemprop="postalCode">11442</p>
          </article>
@@ -146,14 +147,14 @@ class ManagerView {
     li.classList.add("nav-item", "dropdown");
     li.insertAdjacentHTML(
       "beforeend",
-      `<a class="nav-link dropdown-toggle" href="#" id="navCats" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>`
+      `<a class="nav-link dropdown-toggle lang" key='m2' href="#" id="navCats" role="button"  data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>`
     );
     const container = document.createElement("ul");
     container.classList.add("dropdown-menu");
     for (const category of categories) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<li><a data-category="${category.category.name}" class="dropdown-item" href="#${category.category.name}">${category.category.name}</a></li>`
+        `<li><a data-category="${category.category.name}" class="dropdown-item lang" key='${category.category.name}' href="#${category.category.name}">${category.category.name}</a></li>`
       );
     }
     li.append(container);
@@ -165,14 +166,14 @@ class ManagerView {
     li.classList.add("nav-item", "dropdown");
     li.insertAdjacentHTML(
       "beforeend",
-      `<a class="nav-link dropdown-toggle" href="#" id="navAller" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Alérgenos</a>`
+      `<a class="nav-link dropdown-toggle lang" key='m3' href="#" id="navAller" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Alérgenos</a>`
     );
     const container = document.createElement("ul");
     container.classList.add("dropdown-menu");
     for (const allergen of allergens) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<li><a data-allergen="${allergen.allerge.name}" class="dropdown-item" href="#productlist">${allergen.allerge.name}</a></li>`
+        `<li><a data-allergen="${allergen.allerge.name}" class="dropdown-item lang" key='${allergen.allerge.name}' href="#productlist">${allergen.allerge.name}</a></li>`
       );
     }
     li.append(container);
@@ -184,14 +185,14 @@ class ManagerView {
     li.classList.add("nav-item", "dropdown");
     li.insertAdjacentHTML(
       "beforeend",
-      `<a class="nav-link dropdown-toggle" href="#" id="navMenu" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Menús</a>`
+      `<a class="nav-link dropdown-toggle lang" key='m4' href="#" id="navMenu" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Menús</a>`
     );
     const container = document.createElement("ul");
     container.classList.add("dropdown-menu");
     for (const menu of menus) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<li><a data-menu="${menu.menu.name}" class="dropdown-item" href="#productlist">${menu.menu.name}</a></li>`
+        `<li><a data-menu="${menu.menu.name}" class="dropdown-item lang" key='${menu.menu.name}' href="#productlist">${menu.menu.name}</a></li>`
       );
     }
     li.append(container);
@@ -203,14 +204,14 @@ class ManagerView {
     li.classList.add("nav-item", "dropdown");
     li.insertAdjacentHTML(
       "beforeend",
-      `<a class="nav-link dropdown-toggle" href="#" id="navRest" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Restaurantes</a>`
+      `<a class="nav-link dropdown-toggle lang" key='m5' href="#" id="navRest" role="button"     data-bs-toggle="dropdown" aria-expanded="false">Restaurantes</a>`
     );
     const container = document.createElement("ul");
     container.classList.add("dropdown-menu");
     for (const restaurant of restaurants) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<li><a data-restaurant="${restaurant.restaurant.name}" class="dropdown-item" href="#productlist">${restaurant.restaurant.name}</a></li>`
+        `<li><a data-restaurant="${restaurant.restaurant.name}" class="dropdown-item lang" key='${restaurant.restaurant.name}' href="#productlist">${restaurant.restaurant.name}</a></li>`
       );
     }
     li.append(container);
@@ -540,7 +541,7 @@ class ManagerView {
     const li = document.createElement("li");
     li.insertAdjacentHTML(
       "beforeend",
-      `<a class=" href="#" id="navClose" role="button">Cerrar ventanas</a>`
+      `<a class="lang" key='m6' href="#" id="navClose" role="button">Cerrar ventanas</a>`
     );
     this.menu.append(li);
   }

@@ -23,13 +23,32 @@ body {
   position: fixed;
   width: 100%;
   z-index: 1000;
+  display: inline-block;
+}
+
+.traduccion {
+  display: flex;
+  gap: 1%;
+  height: 1px;
+  width: 8%;
+  padding-top: 10px;
+  padding-left: 2%;
+}
+
+.traduccion img {
+  height: 25px;
+}
+
+.traduccion a {
+  text-decoration: none;
+  color: white;
 }
 
 .barra__style {
   list-style: none;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 10px;
 }
 
 .barra__style li {
@@ -426,3 +445,5 @@ h4 {
   margin-top: 12vh;
   height: 80%;
 }
+
+/* -------------------------------- */
