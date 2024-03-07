@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
@@ -27,8 +27,13 @@
 
     <div class="portada">
         <nav class="barra">
+            <div class="traduccion">
+                <img src="./img/traduccion.png" alt="logo para traducción de lenguaje">
+                <a id="es" class="translate" href="#">ES |</a>
+                <a id="en" class="translate" href="#">EN</a>
+            </div>
             <ul class="barra__style">
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a class="lang" key="for0" href="./index.html">Inicio</a></li>
             </ul>
         </nav>
 
@@ -40,78 +45,78 @@
                         <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     <div class="formulario__persona">
-                        <h3>Datos de la reserva:</h3>
+                        <h3 class="lang" key="for1">Datos de la reserva:</h3>
                         <div class="persona__nombre">
-                            <label  for="nombre">Nombre </label>
+                            <label  for="nombre" class="lang" key="for2">Nombre </label>
                             <input id="nombre" type="text" name="nombre" pattern="[A-Za-z]+" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">Debe rellenar el campo con su nombre</div>         
+                            <div class="invalid-feedback lang" key="for2-x">Debe rellenar el campo con su nombre</div>         
                         </div>
                         <div class="persona__apellido1">
-                            <label  for="apellido1">Primer apellido </label>
+                            <label  for="apellido1" class="lang" key="for3">Primer apellido </label>
                             <input id="apellido1" type="tex" name="apellido1" pattern="[A-Za-z]+" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">Debe rellenar el campo con su primer apellido</div>         
+                            <div class="invalid-feedback lang" key="for3-x">Debe rellenar el campo con su primer apellido</div>         
                         </div>                        
                         <div class="persona__apellido2">
-                            <label for="apellido2">Segundo apellido </label>
+                            <label for="apellido2" class="lang" key="for4">Segundo apellido </label>
                             <input id="apellido2" type="tex" name="apellido2" pattern="[A-Za-z]+" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">Debe rellenar el campo con su segundo apellido</div>         
+                            <div class="invalid-feedback lang" key="for4-x">Debe rellenar el campo con su segundo apellido</div>         
                         </div>
                         <div class="persona__fecha">
-                            <label for="fecha">Fecha: </label>
+                            <label for="fecha" class="lang" key="for5">Fecha: </label>
                             <input id="fecha" type="date" name="fecha" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">Debe seleccionar una día para la reserva</div>         
+                            <div class="invalid-feedback lang" key="for5-x">Debe seleccionar una día para la reserva</div>         
                         </div>
                         <div class="persona__hora">
-                            <label for="hora">Hora: </label>
+                            <label for="hora" class="lang" key="for6">Hora: </label>
                             <input id="hora" type="time" name="hora" min="12:00" max="22:00" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">La hora mínima de reserva es a las 12:00 y la máxima a las 22:00</div> 
+                            <div class="invalid-feedback lang" key="for6-x">La hora mínima de reserva es a las 12:00 y la máxima a las 22:00</div> 
                         </div>
                         <div class="persona__personas">
-                            <label for="personas">Ingresa un número:</label>
+                            <label for="personas" class="lang" key="for7">Ingresa un número de comensales:</label>
                             <input id="personas" type="number" name="personas" min="1" max="50" step="1" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">El número de personas a reservar es entre 1 y 50.</div> 
+                            <div class="invalid-feedback lang" key="for7-x">El número de personas a reservar es entre 1 y 50.</div> 
                         </div>
-                        <div class="persona__mensaje">
-                            <label for="mensaje">Escribe tu mensaje:</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required>¿Alguna sugerencia?</textarea>
+                        <div class="persona__mensaje" >
+                            <label for="mensaje" class="lang" key="for8">Escribe tu mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" cols="50" class="lang" key="for8-1" required>¿Alguna sugerencia?</textarea>
                         </div>
                         
                     </div>
 
                     <div class="formulario__tarjeta">
-                        <h3>Datos de la tarjeta:</h3>
+                        <h3 class="lang" key="for9">Datos de la tarjeta:</h3>
                         <div class="tarjeta__numero">
-                            <label for="tarjeta">Número de Tarjeta: </label>
+                            <label for="tarjeta" class="lang" key="for10">Número de Tarjeta: </label>
                             <input id="tarjeta" type="text" pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}" maxlength="19" minlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">El número de tarjeta debe de ser 16 número sin nada entre medias.</div> 
+                            <div class="invalid-feedback lang" key="for10-x">El número de tarjeta debe de ser 16 número con un espacio entre medias cada 4 números.</div> 
                         </div>
                         <div class="tarjeta__caducidad">
-                            <label for="caducidad" class="uno">Caducidad: </label>
+                            <label for="caducidad" class="uno lang" key="for11">Caducidad: </label>
                             <input id="caducidad" type="text" pattern="(0[1-9]|1[0-2])\/(2[2-9]|[3-9][0-9])" maxlength="5" minlength="5" required placeholder="mm/yy">
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">La caducidad debe ser mes/año</div> 
+                            <div class="invalid-feedback lang" key="for11-x">La caducidad debe ser mes/año</div> 
                         </div>
                         <div class="tarjeta__seguridad">
-                            <label for="seguridad" class="uno">Código de seguridad/CVV2: </label>
+                            <label for="seguridad" class="uno lang" key="for12">Código de seguridad/CVV2: </label>
                             <input type="text" id="seguridad" pattern="[0-9]{3}" maxlength="3" minlength="3" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">El número de seguridad son 3 números</div> 
+                            <div class="invalid-feedback lang" key="for12-x">El número de seguridad son 3 números</div> 
                         </div>
                         <div class="tarjeta__titular">
-                            <label for="titular" class="uno">Titular de la Tarjeta: </label>
+                            <label for="titular" class="uno lang" key="for13">Titular de la Tarjeta: </label>
                             <input type="text" id="titular" pattern="[A-Za-z]+(\s[A-Za-z]+)*" required>
                             <div class="valid-feedback">✓</div>
-                            <div class="invalid-feedback">Debe introducir el titular de la tarjeta</div> 
+                            <div class="invalid-feedback lang" key="for13-x">Debe introducir el titular de la tarjeta</div> 
                         </div>
                         <div class="tarjeta__importe">
-                            <label for="importe">Importe: </label>
+                            <label for="importe" class="lang" key="for14">Importe: </label>
                             <input type="text" id="importe" pattern="[0-9]{0,4}[,][0-9]{0,2}" value="20,00" readonly>
                             <img src="./img/visa.png">
                         </div>
@@ -119,8 +124,8 @@
                 </div>
                 <div class="zona2">
                     <div class="formulario_enviar">
-                        <p>Si no se cancela antes de 24 horas deberá abonar al establecimiento los 20,00€ de la reserva.</p>
-                        <p>Si cumple con la reserva no se le efectuará este cobro.</p>
+                        <p class="lang" key="for15">Si no se cancela antes de 24 horas deberá abonar al establecimiento los 20,00€ de la reserva.</p>
+                        <p class="lang" key="for16">Si cumple con la reserva no se le efectuará este cobro.</p>
                         <input id="reservar" type="submit" value="Reservar">
                     </div>
                 </div>
@@ -128,16 +133,16 @@
 
             <div id="confirmDialog" class="modal">
                 <div class="modal-content">
-                  <p>¿Estás seguro de que deseas reservar?</p>
-                  <button id="confirmarReserva">Sí</button>
-                  <button class="close">Cancelar</button>
+                  <p class="lang" key="mod1">¿Estás seguro de que deseas reservar?</p>
+                  <button id="confirmarReserva" class="lang" key="mod2">Sí</button>
+                  <button class="close lang" key="mod3">Cancelar</button>
                 </div>
               </div>
 
               <div id="reservaCompletada" class="modal">
                 <div class="modal-content">
                   <span class="closeConfirmacion">&times;</span>
-                  <p>Su reserva se ha confirmado</p>
+                  <p class="lang" key="mod4">Su reserva se ha confirmado</p>
                 </div>
               </div>
         </section> 
@@ -150,5 +155,8 @@
             crossorigin="anonymous"></script>
 
    <script src="./js/formulario.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="./js/lenguaje.js" charset="utf-8"></script>
 </body>
 </html>

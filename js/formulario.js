@@ -91,7 +91,9 @@ document.getElementById("reservar").addEventListener("click", function (event) {
     document.getElementById("confirmDialog").style.display = "block";
   } else {
     // Mostrar un mensaje de error o realizar otras acciones si los datos no son válidos
-    alert("Por favor, complete todos los campos antes de reservar.");
+    alert(
+      "Por favor, complete todos los campos antes de reservar.Please complete all fields before booking."
+    );
   }
 });
 
