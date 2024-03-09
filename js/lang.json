@@ -65,7 +65,8 @@
       "mod1":"¿Estás seguro de que deseas reservar?",
       "mod2":"Sí",
       "mod3":"Cancelar",
-      "mod4":"Su reserva se ha confirmado"
+      "mod4":"Su reserva se ha confirmado",
+      "galeria":"Galería"
     },
     "en":{
         "m1":"Home",
@@ -133,7 +134,8 @@
         "mod1":"Are you sure you want to book?",
         "mod2":"Yes",
         "mod3":"Cancel",
-        "mod4":"Your reservation has been confirmed"
+        "mod4":"Your reservation has been confirmed",
+        "galeria":"Gallery"
     }
   }
   

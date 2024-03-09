@@ -25,7 +25,7 @@
 <body>
 
     <header class="portada" id="seccionPortada">
-        <nav class="barra">
+        <!--<nav class="barra">
             
             <div class="traduccion">
                 <img src="./img/traduccion.png" alt="logo para traducción de lenguaje">
@@ -34,13 +34,36 @@
             </div>
             <ul class="barra__style">
                 <li id="init" ><a class="lang" key="m1" href="#seccionPortada">Inicio</a></li>
-                <!-- <li id="cat"><a href="#seccionCategorias">Categorías</a></li> -->
-                <!-- <li><a href="#seccionReserva">Reserva</a></li>
-                <li><a href="#seccionNosotros">Nosotros</a></li> -->
+                <li id="cat"><a href="#seccionCategorias">Categorías</a></li> 
+                 <li><a href="#seccionReserva">Reserva</a></li>
+                <li><a href="#seccionNosotros">Nosotros</a></li>
             </ul>
-        </nav>
+        </nav>-->
+        <nav class="navbar navbar-expand-sm barra" data-bs-theme="dark">
+            <div class="container-xxl">
+              <div class="traduccion">
+                <img src="./img/traduccion.png" alt="logo para traducción de lenguaje">
+                <a id="es" class="translate" href="#">ES |</a>
+                <a id="en" class="translate" href="#">EN</a>
+              </div>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li> -->
+                  <li id="init" class="nav-item nav-link"><a class="lang" key="m1" href="#seccionPortada">Inicio</a></li>
+                  <li id="gallery" class="nav-item nav-link"><a class="lang" key="galeria" href="./gallery.html">Galería</a></li>
+                  
+                </ul>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
         <section class="cara">
-            <div class="cara__logotipo"><img src="./img/mar_logo_sin_fondo.png"></div>
+            <div class="cara__logotipo"></div>
         </section>
         <div class="separador"></div>
     </header>

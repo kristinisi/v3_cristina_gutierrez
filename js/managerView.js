@@ -5,7 +5,7 @@ class ManagerView {
     this.we = document.getElementById("we");
     this.main = document.getElementById("main");
     this.categories = document.getElementById("categories");
-    this.menu = document.querySelector(".barra__style");
+    this.menu = document.querySelector(".navbar-nav");
     this.dishWindow = new Map();
     this.cont = 0;
   }
@@ -44,23 +44,26 @@ class ManagerView {
     this.categories.replaceChildren();
     const container = document.createElement("section");
     container.id = "section-div";
-    this.categories.insertAdjacentHTML(
+    container.classList.add("row");
+    container.classList.add("container-xxl");
+    container.classList.add("mx-auto");
+    container.insertAdjacentHTML(
       "beforeend",
-      `<div>
+      `<div class='col-md-4'>
         <a class='categories__enlace' href="#Moluscos" data-category="Moluscos">
-        <img src="./img/_calamar.png" alt="Categoría Moluscos y Cefalopodos">
+        <img class='img-fluid mx-auto' src="./img/_calamar.png" alt="Categoría Moluscos y Cefalopodos">
           <h4 class="lang" key="b1">Moluscos y Cefalópodos</h4>
         </a>
       </div>
-      <div>
+      <div class='col-md-4'>
           <a class='categories__enlace' href="#Crustaceos" data-category="Crustaceos">
-              <img src="./img/_langosta.png" alt="Categoría Crustaceos">
+              <img class='img-fluid mx-auto' src="./img/_langosta.png" alt="Categoría Crustaceos">
               <h4 class="lang" key="b2">Crustáceos</h4>
           </a>
       </div>
-      <div>
+      <div class='col-md-4'>
           <a class='categories__enlace' href="#Pescados" data-category="Pescados">
-              <img src="./img/_pez.png" alt="Categoría Pescados">
+              <img class='img-fluid mx-auto' src="./img/_pez.png" alt="Categoría Pescados">
               <h4 class="lang" key="b3">Pescados</h4>
           </a>
       </div>`
@@ -71,6 +74,7 @@ class ManagerView {
     this.main.replaceChildren();
     const container = document.createElement("section");
     container.id = "random-dishes";
+    container.classList.add("d-none", "d-md-grid");
     container.insertAdjacentHTML(
       "beforeend",
       `
@@ -121,14 +125,16 @@ class ManagerView {
               <h1 class='lang' key='n1'>NOSOTROS</h1>
               <h3 class='lang' key='n2'>¿Quiénes somos?</h3>
           </header>
-          <div class="nosotros__imagen"></div>
-          <article class="nosotros_descripcion lang" key='n3'>
-              <p class='lang' key='t1'>Bienvenidos a Mar, el restaurante fundado con pasión y dedicación por un equipo de amantes del mar. Nosotros, los fundadores, nos enorgullece presentarles una experiencia culinaria única, donde cada plato es una obra maestra de calidad fresca directamente del océano.</p>
-  
-              <p class='lang' key='t2'>Con raíces profundas en la tradición gastronómica marina, hemos creado un espacio donde la frescura y la excelencia se fusionan para ofrecerle lo mejor del mar en cada bocado. Nuestro compromiso con la calidad se refleja en cada detalle, desde la cuidadosa selección de ingredientes hasta la presentación artística de cada plato.</p>
-  
-              <p class='lang' key='t3'>En Mar, no solo servimos alimentos; ofrecemos una experiencia que celebra la riqueza del mar y la dedicación a la cocina excepcional. Únase a nosotros para explorar el sabor auténtico del océano, donde cada comida es una celebración de la frescura, la pasión y la tradición. ¡Bienvenidos a bordo!</p>
-          </article>
+          <div class="row justify-content-center">
+            <div class="nosotros__imagen col-12 col-md-6"></div>
+            <article class="nosotros_descripcion lang col-12 col-md-6" key='n3'>
+                <p class='lang' key='t1'>Bienvenidos a Mar, el restaurante fundado con pasión y dedicación por un equipo de amantes del mar. Nosotros, los fundadores, nos enorgullece presentarles una experiencia culinaria única, donde cada plato es una obra maestra de calidad fresca directamente del océano.</p>
+    
+                <p class='lang' key='t2'>Con raíces profundas en la tradición gastronómica marina, hemos creado un espacio donde la frescura y la excelencia se fusionan para ofrecerle lo mejor del mar en cada bocado. Nuestro compromiso con la calidad se refleja en cada detalle, desde la cuidadosa selección de ingredientes hasta la presentación artística de cada plato.</p>
+    
+                <p class='lang' key='t3'>En Mar, no solo servimos alimentos; ofrecemos una experiencia que celebra la riqueza del mar y la dedicación a la cocina excepcional. Únase a nosotros para explorar el sabor auténtico del océano, donde cada comida es una celebración de la frescura, la pasión y la tradición. ¡Bienvenidos a bordo!</p>
+            </article>
+          </div>
          <article class="nosotros__situacion" itemprop="adress" itemscope itemtype="https://schema.org/PostalAddress">
               <h3 class='lang' key='n4'>¿Dónde encontrarnos?</h3>
               <p class='lang' key='n5' itemprop="streetAddress">Calle Lope de Vega, 33</p>
@@ -218,6 +224,16 @@ class ManagerView {
     this.menu.append(li);
   }
 
+  showCloseInMenu() {
+    const li = document.createElement("li");
+    li.classList.add("nav-item");
+    li.insertAdjacentHTML(
+      "beforeend",
+      `<a class="lang nav-link" key='m6' href="#" id="navClose" role="button">Cerrar ventanas</a>`
+    );
+    this.menu.append(li);
+  }
+
   listDishes(dishes, name, pageTitle) {
     this.categories.replaceChildren();
     this.main.replaceChildren();
@@ -243,11 +259,6 @@ class ManagerView {
     container.insertAdjacentHTML(
       "beforeend",
       `<section class="row seccion__plato">
-      <div id="peces">
-        <img src="./img/fish.gif" id="imagen-pez1"/>
-        <img src="./img/fish.gif" id="imagen-pez2"/>
-        <img src="./img/fish.gif" id="imagen-pez3"/>
-      </div>
       </section>`
     );
 
@@ -537,13 +548,48 @@ class ManagerView {
     });
   }
 
-  showCloseInMenu() {
-    const li = document.createElement("li");
-    li.insertAdjacentHTML(
+  showGallery() {
+    this.categories.replaceChildren();
+    this.main.replaceChildren();
+    this.we.replaceChildren();
+
+    const nav = document.createElement("nav");
+    nav.id = "migas_galeria";
+    nav.ariaLabel = "breadcrumbs";
+    nav.insertAdjacentHTML(
       "beforeend",
-      `<a class="lang" key='m6' href="#" id="navClose" role="button">Cerrar ventanas</a>`
+      `
+      <ol class="breadcrumb">
+       <li class="breadcrumb-item">Inicio</li>
+       <li class="breadcrumb-item active">Galería</li>
+      </ol>
+      `
     );
-    this.menu.append(li);
+
+    const container = document.createElement("div");
+    container.classList.add("container");
+    if (restaurant) {
+      container.id = "gallery";
+      container.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class"row">
+          <div class="card text-bg-dark row col-md-3">
+            <img src="./img/f01.jpg" class="card-img ">
+          </div>
+          <div class="card text-bg-dark row col-md-3">
+            <img src="./img/f02.jpg" class="card-img ">
+          </div>
+          <div class="card text-bg-dark row col-md-3">
+            <img src="./img/f03.jpg" class="card-img ">
+          </div>
+        </div>
+       
+        `
+      );
+    }
+    this.main.append(nav);
+    this.main.append(container);
   }
 
   bindCloseInMenu(handler) {

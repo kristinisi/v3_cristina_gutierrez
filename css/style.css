@@ -29,10 +29,7 @@ body {
 .traduccion {
   display: flex;
   gap: 1%;
-  height: 1px;
   width: 8%;
-  padding-top: 10px;
-  padding-left: 2%;
 }
 
 .traduccion img {
@@ -44,11 +41,8 @@ body {
   color: white;
 }
 
-.barra__style {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.navbar-nav {
+  padding-right: 8%;
 }
 
 .barra__style li {
@@ -64,12 +58,20 @@ body {
 .cara {
   background-image: url("../img/mar_fondo2.jpg");
   background-size: cover;
+  position: relative;
 }
 
 .cara__logotipo {
-  object-fit: cover;
-  margin-left: 33vw;
-  margin-top: 15vh;
+  background-image: url("../img/mar_logo_sin_fondo.png");
+  background-size: contain;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .separador {
@@ -127,19 +129,15 @@ hr {
 
 .nosotros {
   padding-top: 35px;
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: [uno] 150px [dos] 500px [tres]200px[cuatro]; /*[tres]500[cuatro]200px[cinco]*/
-  justify-items: center;
+  width: 80%;
   margin: auto;
-  row-gap: 20px;
 }
 
 .nosotros header {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
+  margin-bottom: 3%;
 }
 
 .nosotros__imagen {
@@ -151,7 +149,7 @@ hr {
 
 .nosotros_descripcion {
   text-align: justify;
-  padding-right: 100px;
+  padding: 5%;
 }
 
 .nosotros__360 {
@@ -164,6 +162,7 @@ hr {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
+  padding-bottom: 2%;
 }
 
 .foo {
@@ -184,25 +183,20 @@ hr {
 
 #categories img {
   height: 300px;
-}
-
-#categories {
-  width: 80%;
-  list-style: none;
-  display: flex;
-  text-align: center;
   margin: auto;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: block;
 }
 
-#categories div {
-  padding-left: 40px;
-  padding-right: 40px;
+#section-div {
+  justify-self: center;
+  align-items: center;
 }
 
 .categories__enlace {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: block;
   text-decoration: none;
   color: black;
 }
@@ -299,6 +293,7 @@ h4 {
 
 .dropdown-menu {
   --bs-dropdown-padding-y: 0;
+  --bs-dropdown-link-hover-bg: white;
 }
 
 .dropdown-menu li {
@@ -369,77 +364,6 @@ h4 {
   margin-top: 40vh;
 }
 
-#peces {
-  z-index: 1;
-  position: absolute;
-  height: 140vh;
-  width: 90vw;
-  overflow: hidden;
-  opacity: 70%;
-  padding: 0;
-  margin: 0;
-}
-
-#imagen-pez1 {
-  width: 2%;
-  position: absolute;
-  animation: desplazar1 20s infinite linear, rotar1 10s infinite linear;
-  top: 50%; /* Posición vertical para el primer pez */
-  left: 0; /* Posición inicial a la izquierda */
-  transform: rotate(-45deg); /* Rota la imagen 45 grados */
-}
-
-#imagen-pez2 {
-  width: 2%;
-  position: absolute;
-  animation: desplazar2 20s infinite linear, rotar2 10s infinite linear;
-  top: 0; /* Posición vertical para el segundo pez */
-  left: 50%; /* Posición inicial arriba */
-  transform: rotate(35deg); /* Rota la imagen 45 grados */
-}
-
-#imagen-pez3 {
-  width: 2%;
-  position: absolute;
-  animation: desplazar3 20s infinite linear, rotar3 10s infinite linear;
-  top: 50%; /* Posición vertical para el tercer pez */
-  right: 0; /* Posición inicial a la derecha */
-  transform: rotate(145deg); /* Rota la imagen 45 grados */
-}
-
-@keyframes desplazar1 {
-  0% {
-    top: 50%; /* Posición vertical inicial */
-    left: 0; /* Posición inicial a la izquierda */
-  }
-  100% {
-    top: 100%; /* Posición final abajo */
-    left: 100%; /* Posición final a la derecha */
-  }
-}
-
-@keyframes desplazar2 {
-  0% {
-    top: 0; /* Posición vertical inicial arriba */
-    left: 50%; /* Posición inicial */
-  }
-  100% {
-    top: 100%; /* Posición final abajo */
-    left: 0%; /* Posición final a la derecha */
-  }
-}
-
-@keyframes desplazar3 {
-  0% {
-    top: 100%; /* Posición vertical inicial */
-    right: 0; /* Posición inicial a la derecha */
-  }
-  100% {
-    top: 0%; /* Posición final abajo */
-    right: 100%; /* Posición final a la izquierda */
-  }
-}
-
 #mapa {
   margin: auto;
   margin-top: 12vh;
@@ -447,3 +371,18 @@ h4 {
 }
 
 /* -------------------------------- */
+
+@media screen and (max-width: 576px) {
+  .traduccion {
+    width: 30%;
+  }
+  .seccion__plato div {
+    width: 100%;
+    margin: 0;
+  }
+  #dishes-list p,
+  h4 {
+    width: 100%;
+    margin: auto;
+  }
+}
